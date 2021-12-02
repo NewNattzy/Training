@@ -18,6 +18,7 @@ while ($Open -eq 'True') {
     Write-Output "Проверка доступности интернета"
     while ($Alert -eq 'False') {
         
+        # Если указать -Count 10, то дальнейшие проверки if-else излишне, но почему-то не заработало
         $InternetAccess = Test-Connection -Count 1 -computer google.com -quiet
         Wait-Event -Timeout 1
 
@@ -59,7 +60,6 @@ while ($Open -eq 'True') {
      if ($EthernetGate.NextHop -eq $MainGateway) {
          netsh interface ip set address "Ethernet" static $ip $mask $SpareGateway
          Write-Output("Switch gateway on $SpareGateway")
-         Wait-Event -Timeout 30
          # Отправка оповещения на почту?
          $Alert = 'False'
      }
@@ -68,7 +68,6 @@ while ($Open -eq 'True') {
      elseif ($EthernetGate.NextHop -eq $SpareGateway) {
           netsh interface ip set address "Ethernet" static $ip $mask $MainGateway
           Write-Output("Switch gateway on $MainGateway")
-          Wait-Event -Timeout 30
           # Отправка оповещения на почту?
           $Alert = 'False'
         }
@@ -76,8 +75,9 @@ while ($Open -eq 'True') {
      #Иначе указан неверный шлюз
      else {
         Write-Output("Invalid gateway specified")
-        Wait-Event -Timeout 30
         # Отправка оповещения на почту?
         $Alert = 'False'
         }
+        
+     Wait-Event -Timeout 30
 }
