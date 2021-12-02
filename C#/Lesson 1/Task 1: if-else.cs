@@ -9,7 +9,7 @@ using System;
 
 namespace PercentCalc
 {
-    class Programm
+    class Program
     {
         static void Main(string[] args)
         {
