@@ -1,2 +1,1 @@
-# main-project
-Make your code Greate again!
+# Make your code Greate again!
