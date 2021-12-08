@@ -1,4 +1,5 @@
 namespace Character { 
+    
     class Player
     {
         private string? name;
@@ -19,4 +20,13 @@ namespace Character {
             set { special = value; }
         }
     }
+    
+    class Special : Player
+    {
+        public Special(string? playername, string? special) : base(playername, special)
+        {
+
+        }
+    }
+    
 }
