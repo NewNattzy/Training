@@ -10,20 +10,18 @@ namespace ConsoleGame
             string? playername = "";
             while (true)
             { 
-                Console.WriteLine("Оракул: Введи свое имя");
+                Console.WriteLine("Оракул: Введи свое имя.");
                 Console.Write("Ты: ");
                 playername = Console.ReadLine();
                 Console.Clear();
                 if (playername != "" && playername.Length >= 3)
-                {
-                    Thread.Sleep(200);
                     break;
-                }
             }
             
             string[] special = { "Воин", "Маг", "Лучник" };
             string? playerspecial = "";
             bool specialchoice = false;
+            Thread.Sleep(250);
             while (specialchoice == false)
             {
                 Console.WriteLine($"Оракул: Отлично, {playername}. Теперь выбери свою судьбу. Ты Воин, Маг или Лучник?");
@@ -32,10 +30,7 @@ namespace ConsoleGame
                 foreach (string i in special)
                 {
                     if (i == playerspecial)
-                    { 
                         specialchoice = true;
-                        Thread.Sleep(1000);
-                    }
                     Console.Clear();
                 }
             }
@@ -43,7 +38,7 @@ namespace ConsoleGame
             int basehealth = 0;
             int basemana = 0;
             int gold = 0;
-
+            Thread.Sleep(250);
             switch (playerspecial)
             {
                 case "Воин":
