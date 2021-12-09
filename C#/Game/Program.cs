@@ -71,7 +71,7 @@ namespace ConsoleGame
             Console.WriteLine($"Мана: {player.Mana}");
             Console.WriteLine($"Золото: {player.Gold}");
             Console.WriteLine($"Опыт: {player.Exp}");
-            Console.WriteLine("Оракул: Твои преключения начинаются!");
+            Console.WriteLine("Оракул: Твои приключения начинаются!");
             Console.ReadKey();
         }
     }
