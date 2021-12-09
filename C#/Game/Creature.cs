@@ -18,7 +18,12 @@ namespace Creature
             this.damage = damage;
             this.gold = gold;
         }
-
+        
+        public int Damage
+        {
+            get { return damage; }
+            set { damage = value; }
+        }
         public byte Level
         {
             get { return level; }
@@ -31,6 +36,7 @@ namespace Creature
         }
         public abstract int Health { get; set; }
         public abstract int Mana { get; set; }
+        
         public abstract void Talk(string words);
     }
 
