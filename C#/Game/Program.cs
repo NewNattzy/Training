@@ -13,10 +13,12 @@ namespace ConsoleGame
                 Console.WriteLine("Оракул: Введи свое имя");
                 Console.Write("Ты: ");
                 playername = Console.ReadLine();
-                if (playername != "")
-                    Thread.Sleep(1000);
-                    Console.Clear();
+                Console.Clear();
+                if (playername != "" && playername.Length >= 3)
+                {
+                    Thread.Sleep(200);
                     break;
+                }
             }
             
             string[] special = { "Воин", "Маг", "Лучник" };
