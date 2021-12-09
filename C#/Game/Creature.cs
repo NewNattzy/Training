@@ -61,7 +61,8 @@ namespace Creature
             get { return exp; }
             set { exp = value; }
         }
-
+        
+        // Под игрока планирую немного иную механику разговоров, пока что так
         public override void Talk(string words)
         {
             Console.WriteLine($"{this.name} say: {words}");
@@ -88,7 +89,8 @@ namespace Creature
             get { return health; }
             set { health = value; }
         }
-
+        
+        // Тут тоже должна быть своя "механика"
         public override void Talk(string words)
         {
             Console.WriteLine($"{this.name} say: {words}");
