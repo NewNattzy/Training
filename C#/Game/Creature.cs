@@ -5,7 +5,7 @@ namespace Creature
         public string name;
         private protected int health;
         private protected int mana;
-        private protected int damage;
+        private int damage;
         private byte level;
         private int gold;
 
