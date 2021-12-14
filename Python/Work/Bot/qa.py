@@ -3,7 +3,8 @@ class quality_control:
     def __init__(self, evaluation, text):
         self.__evaluation = evaluation
         self.__text = text
-
+    
+    // Пожалуй стоило сделать через case/switch
     def save_eval(self):
         if self.__evaluation == "1. Серьезные проблемы":
             result = "Контакты руководителя: 8-999-999-99-99\nЧто крайне необходимо улучшить?"
