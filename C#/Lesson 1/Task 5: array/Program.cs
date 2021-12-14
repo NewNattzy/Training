@@ -8,10 +8,13 @@ using System;
 
 namespace ArraySort
 {
+    
     class program
     {
+        
         static void Main(string[] args)
         {
+            
             int[,,] Mas = { { { 1, 2 },{ 3, 4 } },
                 { { 4, 5 }, { 6, 7 } },
                 { { 7, 8 }, { 9, 10 } },
@@ -19,5 +22,7 @@ namespace ArraySort
               };
 
         }
+        
     }
+    
 }
