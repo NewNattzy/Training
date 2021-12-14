@@ -1,6 +1,3 @@
-#Очищаем экран
-Clear-Host
-
 # Head
 $Open = 'True'
 $Alert = 'False'
