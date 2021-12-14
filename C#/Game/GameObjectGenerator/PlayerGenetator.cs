@@ -6,7 +6,7 @@ namespace GameObjectGenerator
 
         public static string[] PlayerCreate()
         {
-
+            
             string playerName;
             string[] special = { "Воин", "Маг", "Лучник" };
             string playerSpecial = "";
@@ -14,7 +14,6 @@ namespace GameObjectGenerator
 
             while (true)
             {
-
                 Console.WriteLine("Оракул: Введи свое имя, герой!");
                 Console.Write("Ты: ");
                 playerName = Console.ReadLine();
@@ -23,28 +22,23 @@ namespace GameObjectGenerator
 
                 if (playerName != "" && playerName.Length >= 3)
                     break;
-
             }
 
             Thread.Sleep(250);
 
             while (specialChoice == false)
             {
-
                 Console.WriteLine($"Оракул: Отлично, {playerName}. Теперь выбери свою судьбу. Ты Воин, Маг или Лучник?");
                 Console.Write($"{playerName}: ");
                 playerSpecial = Console.ReadLine();
 
                 foreach (string i in special)
                 {
-
                     if (i == playerSpecial)
                         specialChoice = true;
-
+                    
                     Console.Clear();
-
                 }
-
             }
 
             Thread.Sleep(250);
@@ -56,7 +50,6 @@ namespace GameObjectGenerator
             
             switch (playerSpecial)
             {
-
                 case "Воин":
                     baseHealth = "200";
                     baseMana = "50";
@@ -74,14 +67,13 @@ namespace GameObjectGenerator
                     baseMana = "100";
                     gold = "150";
                     break;
-
             }
 
             string[] playerStats = new string[] { playerName, baseHealth, baseMana, "10", "1", gold, playerSpecial };
             return playerStats;
-
+            
         }
-
+        
     }
-
+    
 }
