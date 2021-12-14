@@ -1,24 +1,22 @@
-using System;
-using Creature;
-using Generator;
+using GameObjects;
+using GameObjectGenerator;
 
 namespace ConsoleGame
-{ 
+{
+    
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Object Player = CreacureGenerate.PlayerCreate();
-            Console.WriteLine("Характеристики персонажа");
-            Console.WriteLine($"Имя героя: {Player.name}");
-            Console.WriteLine($"Класс: {Player.special}");
-            Console.WriteLine($"Уровень: {Player.Level}");
-            Console.WriteLine($"Здоровье: {Player.Health}");
-            Console.WriteLine($"Мана: {Player.Mana}");
-            Console.WriteLine($"Золото: {Player.Gold}");
-            Console.WriteLine($"Опыт: {Player.Exp}");
-            Console.WriteLine("Оракул: Твои приключения начинаются!");
+            
+            // TODO: Довести до ума генератор игрока, пока что-то странное
+            Object player = PlayerGenerator.PlayerCreate();
+            
             Console.ReadKey();
+            
         }
+        
     }
+    
 }
