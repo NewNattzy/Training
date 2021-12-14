@@ -9,22 +9,31 @@ using System;
 
 namespace PercentCalc
 {
+    
     class Program
     {
+        
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Введите сумму вклада");
+            
             double Money = Convert.ToDouble(Console.ReadLine());
             double Percent;
+            
             if (Money < 100)
                 Percent = Money / 100 * 5;
             else if (Money >= 100 && Money <= 200)
                 Percent = Money / 100 * 7;
             else
                 Percent = Money / 100 * 10;
+            
             Money += Percent;
             Console.WriteLine($"Ваш счет {Money}");
             Console.ReadKey();
+            
         }
+        
     }
+    
 }
