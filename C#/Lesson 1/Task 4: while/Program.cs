@@ -9,25 +9,35 @@ using System;
 
 namespace SimpleCalc
 {
+    
     class program
     {
+        
         static void Main(string[] args)
         {
             
             while (true)
             {
+                
                 Console.WriteLine("Введите X: ");
                 int X = Convert.ToInt32(Console.ReadLine());
+                
                 Console.WriteLine("Введите Y: ");
                 int Y = Convert.ToInt32(Console.ReadLine());
+                
                 if ( (X <= 10 && X >= 0) && (Y <= 10 && Y >= 0))
                 {
                     Console.WriteLine($"Результат: {X*Y}");
                     break;
                 }
+                
                 Console.WriteLine("Одно из значений вне диапазона от 0 до 10");
             }
+            
             Console.ReadKey();
+            
         }
+        
     }
+    
 }
