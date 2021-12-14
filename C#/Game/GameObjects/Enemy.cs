@@ -6,13 +6,13 @@ namespace GameObjects
 
         public string type;
         static int index = 1;
-        public Enemy[] EnemyData;
+        public Enemy[] ArrayEnemy;
 
         public Enemy(string name, int basehealth, int basemana, int damage, int level, int gold, string type)
             : base(name, basehealth, basemana, damage, level, gold)
         {
             this.type = type;
-            EnemyData = new Enemy[index];
+            ArrayEnemy = new Enemy[index];
             index++;
         }
 
@@ -33,11 +33,11 @@ namespace GameObjects
         {
             get
             {
-                return EnemyData[index];
+                return ArrayEnemy[index];
             }
             set
             {
-                EnemyData[index] = value;
+                ArrayEnemy[index] = value;
             }
         }
 
