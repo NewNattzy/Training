@@ -1,6 +1,6 @@
 namespace GameObjects
 {
-    public class Map
+    public class WorldMap
     {
 
     }
