@@ -2,34 +2,26 @@ namespace GameConfig
 {
     public static class Config
     {
+        public static int MaxMapSize { get; private set; }
 
-        static private int mapSize = 100;
-        static private int gameObjectsLimit = 100;
-        static private int creatureMaxLevel = 100;
-        static private string gameDifficulty = "Normal";
+        public static int GameObjectsLimit { get; private set; }
 
-        public static int MapSize
+        public static int BaseLocationPopulation { get; private set; }
+
+        public static int CreatureMaxLevel { get; private set; }
+
+        public static int MaxActiveQuests { get; private set; }
+
+        public static string? GameDifficulty { get; private set; }
+
+        public static void SettingValues()
         {
-            get => mapSize;
-            set => mapSize = value;
-        }
-
-        public static int GameObjectsLimit
-        {
-            get => gameObjectsLimit;
-            set => gameObjectsLimit = value;
-        }
-
-        public static int CreatureMaxLevel
-        {
-            get => creatureMaxLevel;
-            set => creatureMaxLevel = value;
-        }
-
-        public static string GameDifficulty
-        {
-            get => gameDifficulty;
-            set => gameDifficulty = value;
+            MaxMapSize = 1000;
+            GameObjectsLimit = 100;
+            BaseLocationPopulation = 100;
+            CreatureMaxLevel = 100;
+            MaxActiveQuests = 10;
+            GameDifficulty = "Normal";
         }
 
     }
