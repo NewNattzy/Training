@@ -5,7 +5,10 @@ namespace GameObjects
     public abstract class Location : ILocation
     {
 
+        private static int index = 1;
         internal static int locationCount = 0;
+
+        public Location[] ArrayLocation;
 
         private string name = "default";
         private string status = "normal";
@@ -19,11 +22,21 @@ namespace GameObjects
         public Location(string name, string type, string landscape, int danger, int population)
         {
             locationCount++;
+
             this.name = name;
             this.type = type;
             this.landscape = landscape;
             this.danger = danger;  
             this.population = population;
+
+            ArrayLocation = new Location[index];
+            index++;
+        }
+
+        public Location this[int index]
+        {
+            get => ArrayLocation[index];
+            set => ArrayLocation[index] = value;
         }
 
         #region Property
