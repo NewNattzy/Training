@@ -3,21 +3,20 @@ namespace Interfaces
     public interface ILocation
     {
 
-        public char MapTyle { get; set; }
+        public static int locationCount;
 
         public string Name { get; set; }
-        public string Status { get; set; }
         public string Type { get; set; }
         public string Landscape { get; set; }
+        public string Status { get; set; }
 
         public int Danger { get; set; }
         public int Population { get; set; }
 
-        public void Destroy();
-
-        public void Siege();
-
-        public void Restored();
+        public void Destroyed();
+        public void Sieged();
+        public void Cursed();
+        public void Improved();
 
     }
 
