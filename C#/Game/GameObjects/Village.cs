@@ -18,7 +18,7 @@ namespace GameObjects
         {
             Status = "Осажден";
 
-            if (Population % 10 == 0 && Population != 0)
+            if (Population % 2 == 0 && Population != 0)
                 Population /= 2;
             else if (Population < 10)
                 Destroyed();
