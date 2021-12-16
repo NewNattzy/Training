@@ -1,9 +1,8 @@
 using GameConfig;
-using Interfaces;
 
 namespace GameObjects
 {
-    public class Village : Location, ILocation
+    public class Village : Location
     {
 
         private static int maxPopulation = Config.BaseLocationPopulation * 4;
