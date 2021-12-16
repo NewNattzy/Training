@@ -5,18 +5,20 @@ namespace GameObjects
     public abstract class Location : ILocation
     {
 
-        private char mapTyle = '?';
+        internal static int locationCount = 0;
 
-        private protected string name = "default";
-        private protected string status = "normal";
-        private protected string type = "default";
-        private protected string landscape = "default";
+        private string name = "default";
+        private string status = "normal";
+        private string type = "default";
+        private string landscape = "default";
 
-        private protected int danger = 0;
-        private protected int population = 0;
+        private int danger = 0;
+        private int population = 0;
+
 
         public Location(string name, string type, string landscape, int danger, int population)
         {
+            locationCount++;
             this.name = name;
             this.type = type;
             this.landscape = landscape;
@@ -25,22 +27,10 @@ namespace GameObjects
         }
 
         #region Property
-        public char MapTyle
-        {
-            get => mapTyle;
-            set => mapTyle = value;
-        }
-
         public string Name
         {
             get => name;
             set => name = value;
-        }
-
-        public string Status
-        {
-            get => status;
-            set => status = value;
         }
 
         public string Type
@@ -53,6 +43,12 @@ namespace GameObjects
         {
             get => landscape;
             set => landscape = value;
+        }
+
+        public string Status
+        {
+            get => status;
+            set => status = value;
         }
 
         public int Danger
@@ -68,40 +64,17 @@ namespace GameObjects
         }
         #endregion
 
-        #region Methods
-        public void Destroy()
+        public void Destroyed()
         {
-            status = "Уничтожен";
-            population = 0;
-            danger = 5;
-            mapTyle = 'D';
+            Status = "Уничтожен";
+            Population = 0;
+            Danger = 7;
         }
 
-        public void Siege()
-        {
-            status = "Осажден";
-
-            if (population % 2 == 0 && population != 0)
-                population /= 2;
-            else
-            {
-                population++;
-                population /= 2;
-            }
-                
-            danger = 10;
-            mapTyle = 'S';
-        }
-
-        public void Restored()
-        {
-            status = "Восстановлен";
-            population += 100;
-            danger = 2;
-            mapTyle = 'R';
-        }
-        #endregion
-
+        public abstract void Sieged();
+        public abstract void Cursed();
+        public abstract void Improved();
+      
     }
 
 }
