@@ -36,7 +36,7 @@ namespace GameObjectManagment
                 Console.WriteLine($"Оракул: Отлично, {playerName}. Теперь выбери свою судьбу. Ты воин, лучник или маг?");
                 Console.Write($"{playerName}: ");
 
-                playerSpecial = Console.ReadLine().ToLower();
+                playerSpecial = Console.ReadLine();
                 playerSpecial = Regex.Replace(playerSpecial.ToLower(), @"\b[a-zа-яё]", m => m.Value.ToUpper());
 
                 if (special.Contains(playerSpecial))
